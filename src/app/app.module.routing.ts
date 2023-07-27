@@ -3,12 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 
 // pages
 import { HomeComponent } from './pages/home/home.component';
-import { PerfilComponent } from './pages/perfil/perfil.component';
+import { FoodMenuComponent } from './pages/food-menu/food-menu.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'perfil', component: PerfilComponent },
+  { path: 'food-menu/:name/:id', component: FoodMenuComponent },
 
   { path: '**', component: NotFoundComponent },
 ];

@@ -1,6 +1,4 @@
-<nav class="flex flex-col">
-  <a class="text-blue-400" routerLink="/">Home</a>
-  <a class="text-blue-400" routerLink="/perfil">Perfil</a>
-</nav>
-
-<router-outlet></router-outlet>
+<main class="container mx-auto py-5">
+  <router-outlet></router-outlet>
+</main>
+<app-loading *ngIf="loadingService.isLoadingOpen"></app-loading>
