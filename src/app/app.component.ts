@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LoadingService } from './shared/components/loading/loading.service';
 
 @Component({
@@ -6,8 +6,13 @@ import { LoadingService } from './shared/components/loading/loading.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  loading: boolean = false;
 
   constructor(public loadingService: LoadingService) {}
+
+  ngOnInit() {
+    this.loadingService.eventLoading.subscribe((res: boolean) => setTimeout(() => this.loading = res));
+  }
 
 }

@@ -1,20 +1,17 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoadingService {
-  private isOpen: boolean = false;
 
-  get isLoadingOpen(): boolean {
-    return this.isOpen;
-  }
+  public eventLoading: EventEmitter<boolean> = new EventEmitter();
 
   openLoading(): void {
-    this.isOpen = true;
+    this.eventLoading.emit(true);
   }
 
   closeLoading(): void {
-    this.isOpen = false;
+    this.eventLoading.emit(false);
   }
 }

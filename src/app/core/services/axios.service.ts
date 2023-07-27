@@ -14,7 +14,7 @@ export class AxiosService {
 
   constructor(private loadingService: LoadingService){}
 
-  get(url: string, loading?: boolean): Observable<any> {
+  get(url: string, loading: boolean = false): Observable<any> {
     if(loading) this.loadingService.openLoading();
 
     return new Observable((observer) => {
